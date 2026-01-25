@@ -1,35 +1,39 @@
-name: Deploy Hexo to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+
+# 为整个工作流添加基础权限
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 关键修复：递归检出子模块，确保Fluid主题被拉取
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
 
+      # 已按你要求，使用 Node.js 24
       - name: Setup Node.js 24
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-
-      - name: Cache Dependencies
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
+          cache: 'npm'
 
       - name: Install Dependencies
         run: npm ci
 
-      - name: Generate Hexo Site
-        run: npx hexo clean && npx hexo generate
+      # 明确的构建命令
+      - name: Build
+        run: |
+          npx hexo clean
+          npx hexo generate
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
@@ -42,6 +46,9 @@ jobs:
       pages: write
       id-token: write
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
