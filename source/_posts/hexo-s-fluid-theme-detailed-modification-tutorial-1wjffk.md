@@ -1,6 +1,7 @@
 <h1>Hexo的Fluid主题详细修改教程</h1>
 <p>首先所有有关主题的修改都是在config.fluid.yml这个文件中进行，所以在修改的过程中<strong>建议备份一份_config.fluid.yml</strong>，并且将<strong>config.fluid.yml至于myblogs根目录下，</strong> YML文件对于缩进的严格程度很高，如果不小心调整了文件的缩进，会在推送的过程中对该文件进行报错，如下：</p>
-<p><img src="assets/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-02-01%20140030-20260207170632-7ba94et.png" alt="屏幕截图 2026-02-01 140030" />所以备份一份config.fluid.yml文件对你的修改是有备无患的。</p>
+<p><img src="assets/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-02-01%20135826-20260214183213-r4pxxjn.png" alt="屏幕截图 2026-02-01 135826" /></p>
+<p>所以备份一份config.fluid.yml文件对你的修改是有备无患的。</p>
 <p>‍</p>
 <h2><strong>一.有关banner image的修改</strong></h2>
 <p>首页（index）的Banner头图：在配置文件中，index部分下的banner_img。</p>
