@@ -15,7 +15,7 @@ toc: true
 
 首先所有有关主题的修改都是在config.fluid.yml这个文件中进行，所以在修改的过程中**建议备份一份_config.fluid.yml**，并且将**config.fluid.yml至于myblogs根目录下，** YML文件对于缩进的严格程度很高，如果不小心调整了文件的缩进，会在推送的过程中对该文件进行报错，如下：
 
-![屏幕截图 2026-02-01 135826](https://yyscarlet.github.io/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-02-01%20135826-20260224185339-ylu5uwa.png)
+![屏幕截图 2026-02-01 135826](https://yysiyuanbiji.oss-cn-beijing.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-02-01%20135826-20260307110134-tp2lpts.png)
 
 所以备份一份config.fluid.yml文件对你的修改是有备无患的。
 
