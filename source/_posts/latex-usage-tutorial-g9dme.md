@@ -1,7 +1,7 @@
 ---
 title: Latex使用教程
 date: '2026-04-19 12:29:46'
-updated: '2026-04-29 17:04:21'
+updated: '2026-04-29 17:10:44'
 permalink: /post/latex-usage-tutorial-g9dme.html
 comments: true
 toc: true
